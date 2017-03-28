@@ -14,6 +14,9 @@ Gathers information from VMware using PowerCLI and uploads it to Xymon
 	Date	       : March 27th 2017
 
 # Links
-	- PowerShell https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md
-	- VMWare PowerCLI https://labs.vmware.com/flings/powercli-core
-	- Getting Started with PowerCLI http://www.virten.net/2016/10/getting-started-with-powercli-for-linux-powercli-core/
+	- PowerShell 
+		https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md
+	- VMWare PowerCLI 
+		https://labs.vmware.com/flings/powercli-core
+	- Getting Started with PowerCLI 
+		http://www.virten.net/2016/10/getting-started-with-powercli-for-linux-powercli-core/

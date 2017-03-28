@@ -17,11 +17,12 @@ Queries the VMware ESXI Environment based on the host that is running the script
 # Cronjob
 Runs the snapshots.ps1 script at 9am, 12pm, 3pm every day
 
-0 9,12,15 * * * /usr/bin/powershell /home/someuser/snapshots.ps1
+`0 9,12,15 * * * /usr/bin/powershell /home/someuser/snapshots.ps1`
 
 # Alerts
 I didn't want super noisy alerts.This will only allow RED alerts to be sent every 4 hours from 8am - 4pm every day. Because of the way I have my cronjob setup i'm getting alerts at 9am and 1pm.
 
-HOST=%.* SERVICE=snapshots COLOR=RED TIME=*:0800:1600
+The trick to gettign the timing to work is to put the REPEAT on the 2nd line with the email.
 
-        MAIL email@somedomain.com REPEAT=240
+`HOST=%.* SERVICE=snapshots COLOR=RED TIME=*:0800:1600`
+        `MAIL email@somedomain.com REPEAT=240`

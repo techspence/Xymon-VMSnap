@@ -25,4 +25,5 @@ I didn't want super noisy alerts.This will only allow RED alerts to be sent ever
 The trick to gettign the timing to work is to put the REPEAT on the 2nd line with the email.
 
 `HOST=%.* SERVICE=snapshots COLOR=RED TIME=*:0800:1600`
+        
         `MAIL email@somedomain.com REPEAT=240`

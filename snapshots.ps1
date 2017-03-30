@@ -56,7 +56,7 @@ foreach ($vm in (get-vm)) {
 		$vmname = $vmguest.HostName.split('.')[0]
 		$vmname = $vmname.ToUpper()
 	} catch {
-		BREAK
+		# continue
 	}
 	
 	# Get the snapshots

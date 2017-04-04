@@ -30,5 +30,5 @@ The trick to gettign the timing to work is to put the REPEAT on the 2nd line wit
 
 
 # Future Enhancements
-- HTML formattted output
-- Snapshot creator (you need vcenter for this)
+1. HTML formattted output
+2. Snapshot creator (you need vcenter for this)

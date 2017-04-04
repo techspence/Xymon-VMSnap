@@ -27,3 +27,8 @@ The trick to gettign the timing to work is to put the REPEAT on the 2nd line wit
 `HOST=%.* SERVICE=snapshots COLOR=RED TIME=*:0800:1600`
 
 `MAIL email@somedomain.com REPEAT=240`
+
+
+# Future Enhancements
+- HTML formattted output
+- Snapshot creator (you need vcenter for this)

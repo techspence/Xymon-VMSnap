@@ -20,9 +20,16 @@
 # Import all the PowerCLI Modules
 Get-Module -ListAvailable PowerCLI* | Import-Module
 
+# Date
+$THEDATE = Get-Date
+
 # Snapshot Age (in days)
 $RED = 5
 $YELLOW = 3
+
+# Change the color of the icon based on snapshot age
+$REDDATE = $THEDATE.AddDays(-$RED)
+$YELLOWDATE = $THEDATE.AddDays(-$YELLOW)
 
 # Delay so icons don't go purple
 $DELAY = "+20h"
@@ -50,7 +57,7 @@ foreach ($vm in (get-vm)) {
 	$vmname = ""
 
 	$vmguest = Get-VMGuest -vm $vm.name
-
+	
 	# If the VM is not running we won't be able to grab DNS Name
 	try {
 		$vmname = $vmguest.HostName.split('.')[0]
@@ -64,16 +71,26 @@ foreach ($vm in (get-vm)) {
 
 	if (($snapshot.Length) -gt 0) {
 		foreach ($snap in $snapshot) {
-			# Output
-			$output += "`r`n - " + $snap.created + " - \`"$($snap.name)\`""
+			# Snapshot size
+			$snapshotsize = [math]::Round($snap.SizeGB,2)
+
+			# Snapshot Creation Date
+			$created = $snap.created
+			
+			$daysold = ($THEDATE - $created).days
+			$hoursold = [math]::Round(($THEDATE - $created).hours / 24,2)
+			$age = "$($daysold + $hoursold) Days(s)"
+
+
+			# Snapshot output
+			$output += "`r`n - " + $snap.created + " - \`"$($snap.name)\`"" + " - " + $snapshotsize + "GB" + " - " + $age + ""
+
 		}
-	
-		$snapinfo = "`r`n" + "ESXi Server: $server" + "`r`n" + "Virtual Machine: $vmname" + "`r`n" + "Snapshot(s):" + $output + "`r`n"
-	
-		# Change the color of the icon based on snapshot age
-		$THEDATE = Get-Date
-		$REDDATE = $THEDATE.AddDays(-$RED)
-		$YELLOWDATE = $THEDATE.AddDays(-$YELLOW)
+
+		$output
+		$snapinfo = "`r`n" + "ESXi Server: $server" + "`r`n" + "Virtual Machine: $vmname" + "`r`n" + "Snapshot(s):`r`n" + $output + "`r`n"
+		
+		
 
 		#If the snapshot(s) are older than or equal to $RED Days
 		if ($snapshot.created -le $REDDATE) {

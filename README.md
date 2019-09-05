@@ -37,13 +37,13 @@ Run the following commands on the linux terminal.
 
 `sudo apt-get install -y powershell`
 
-**6. Start PowerShell, very that it runs**
+**6. Start PowerShell, verify that it runs**
 
 `pwsh`
 
 # Installing PowerCLI
 
-1. Open a terminal in linux and run pwsh to start Powershell
+1. Open a terminal in linux and run `pwsh` to start Powershell
 
 2. Open a terminal and run the following command, select Y at the prompt to continue
 
@@ -89,9 +89,9 @@ How to determine if the cron job ran
 
 
 # Alerts
-I didn't want super noisy alerts.This will only allow RED alerts to be sent every 4 hours from 8am - 4pm every day. Because of the way I have my cronjob setup i'm getting alerts at 9am and 1pm.
+I didn't want super noisy alerts. This will only allow RED alerts to be sent every 4 hours from 8am - 4pm every day. Because of the way I have my cronjob setup i'm getting alerts at 9am and 1pm.
 
-The trick to gettign the timing to work is to put the REPEAT on the 2nd line with the email.
+The trick to getting the timing to work is to put the REPEAT on the 2nd line with the email.
 
 `HOST=%.* SERVICE=snapshots COLOR=RED TIME=*:0800:1600`
 
@@ -115,7 +115,7 @@ __As of right now the colored icons correspond to the following:__
 
 ![Xymon red Recent](https://raw.githubusercontent.com/techspence/Xymon-VMSnap/master/readme-img/red-recent.gif) snapshot >= 5 days old (may also see  )
 
-__**Reminder:**__ Old snapshots > 5 days old should be removed. If there is a need to have a snapshot longer than 5 days it may be more reasonable to take a point-in-time backup rather than preserve the snapshot. Snapshots can be come quite large if not removed shortly after their taken.
+__**Reminder:**__ Old snapshots > 5 days old should be removed. If there is a need to have a snapshot longer than 5 days it may be more reasonable to take a point-in-time backup rather than preserve the snapshot. Snapshots can be come quite large if not removed shortly after they're taken.
 
 # Example Xymon Snapshot Output
 ```

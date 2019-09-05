@@ -64,6 +64,19 @@ Run the following commands on the linux terminal.
 	Set-PowerCLIConfiguration -InvalidCertificateAction Ignore
 	```
 
+# Connecting to a VCenter Server
+
+1. From terminal run `pwsh`
+	```PowerShell 
+	Connect-VIServer -Server someviserver -User thehoff -Password Baywatch
+	```
+
+2. Get Virtual Machine Snapshot Information
+
+	```PowerShell 
+	Get-VM | Get-Snapshots
+	```
+
 # Cronjob
 Runs the snapshots.ps1 script at 9am, 12pm, 3pm every day
 

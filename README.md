@@ -82,6 +82,13 @@ Runs the snapshots.ps1 script at 9am, 12pm, 3pm every day
 
 `0 9,12,15 * * * /usr/bin/pwsh /home/someuser/snapshots.ps1`
 
+How to determine if the cron job ran
+
+`cd /var/log`
+
+`cat syslog.1 syslog | grep snapshots`
+
+
 # Alerts
 I didn't want super noisy alerts.This will only allow RED alerts to be sent every 4 hours from 8am - 4pm every day. Because of the way I have my cronjob setup i'm getting alerts at 9am and 1pm.
 
@@ -111,3 +118,13 @@ __As of right now the colored icons correspond to the following:__
 
 __**Reminder:**__ Old snapshots > 5 days old should be removed. If there is a need to have a snapshot longer than 5 days it may be more reasonable to take a point-in-time backup rather than preserve the snapshot. Snapshots can be come quite large if not removed shortly after their taken.
 
+# Example Xymon Snapshot Output
+```
+ESXi Server: myesxiserver
+Virtual Machine: myvirtualmachine
+Snapshot(s):
+
+ - 04/03/2019 20:12:51 - "test-snapshot-04032019" - 4.08GB - 0.54 Days(s)
+
+(Green < 3 days old)
+```

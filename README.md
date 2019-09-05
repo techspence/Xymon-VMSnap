@@ -88,3 +88,13 @@ I recommend using a dedicated service account for the purposes of running this s
 
 __As of right now the colored icons correspond to the following:__
 
+![Xymon Green Recent](https://raw.githubusercontent.com/techspence/Xymon-VMSnap/master/readme-img/green.gif) No snapshots found
+
+snapshot < 3 days old (this icon is used the first time the snapshots.ps1 script runs even if no snapshots are found)
+
+snapshot > 3 days old (may also see  )
+
+snapshot >= 5 days old (may also see  )
+
+__**Reminder:**__ Old snapshots > 5 days old should be removed. If there is a need to have a snapshot longer than 5 days it may be more reasonable to take a point-in-time backup rather than preserve the snapshot. Snapshots can be come quite large if not removed shortly after their taken.
+

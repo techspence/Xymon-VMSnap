@@ -14,7 +14,6 @@ Queries the VMware ESXI Environment based on the host that is running the script
 - [Installing Powershell Core on Linux](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-6#ubuntu-1804)
 - [Install PowerCLI on Ubuntu 18.04](https://www.altaro.com/vmware/install-powercli-ubuntu-linux-18-04-lts/)
 
-
 # Installing PowerShell Core on Linux
 Run the following commands on the linux terminal.
 

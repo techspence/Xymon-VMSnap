@@ -48,19 +48,15 @@ Run the following commands on the linux terminal.
 
 2. Open a terminal and run the following command, select Y at the prompt to continue
 
-	```PowerShell
-	Install-Module -Name VMware.PowerCLI```
+	```PowerShell Install-Module -Name VMware.PowerCLI```
 
 3. To test if the installation was successful run
 
-	```PowerShell
-	Get-Module VMware.PowerCLI -ListAvailable```
+	```PowerShell Get-Module VMware.PowerCLI -ListAvailable```
 
 4. To avoid a having certificate errors prevent you from connecting to a esxi Server run
 
-	```PowerShell
-	Set-PowerCLIConfiguration -InvalidCertificateAction Ignore```
-
+	```PowerShell Set-PowerCLIConfiguration -InvalidCertificateAction Ignore```
 
 # Cronjob
 Runs the snapshots.ps1 script at 9am, 12pm, 3pm every day

@@ -77,3 +77,14 @@ The trick to gettign the timing to work is to put the REPEAT on the 2nd line wit
 `HOST=%.* SERVICE=snapshots COLOR=RED TIME=*:0800:1600`
 
 `MAIL email@somedomain.com REPEAT=240`
+
+# Snapshot Credentials
+I recommend using a dedicated service account for the purposes of running this script and connecting to VMware. It should ONLY have permissions to access the snapshots on the VMware hosts you specify.
+
+# Snapshot Age
+- There should now be a new column on the Xymon Dashboard called Snapshots
+- When a new snapshot is found in VMware the colored icon will change based on the age of the snapshot
+- The age at which the colors change from GREEN to YELLOW to RED is configurable
+
+__As of right now the colored icons correspond to the following:__
+

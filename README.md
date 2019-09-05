@@ -19,21 +19,27 @@ Queries the VMware ESXI Environment based on the host that is running the script
 Run the following commands on the linux terminal.
 
 **1. Download the Microsoft repository GPG keys**
+
 `wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb`
 
 **2. Register the Microsoft repository GPG keys**
+
 `sudo dpkg -i packages-microsoft-prod.deb`
 
 **3. Update the list of products**
+
 `sudo apt-get update`
 
 **4. Enable the "universe" repositories**
+
 `sudo add-apt-repository universe`
 
 **5. Install PowerShell**
+
 `sudo apt-get install -y powershell`
 
 **6. Start PowerShell, very that it runs**
+
 `pwsh`
 
 # Installing PowerCLI
